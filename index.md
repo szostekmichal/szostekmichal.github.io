@@ -18,7 +18,7 @@ and hardware validation.
 ---
 
 ## 📂 Selected Projects
-- [Konwerter_USB](projects/konwerter_USB.md)
+- [Konwerter_USB](konwerter_USB.md)
 - [Battery Powered IoT Device](projects/iot-device.md)
 - [Motor Driver PCB](projects/motor-driver.md)
 
