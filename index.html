@@ -59,7 +59,7 @@
   /* ===== SECTIONS ===== */
   section {
     padding: 60px 20px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 
@@ -68,15 +68,43 @@
     color: #ffffff;
   }
 
-  .project {
-    margin-bottom: 40px;
+  /* ===== PROJECTS GRID ===== */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
+    gap: 20px;
+    margin-top: 20px;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
+  .project-card {
+    background-color: #1a1a1a;
     border: 1px solid #222;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.5); /* pomarańczowy akcent hover */
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
     margin-top: 10px;
+    border: 1px solid #222;
+    border-radius: 4px;
+  }
+
+  .project-card h4 {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+  }
+
+  .project-card p {
+    margin: 0;
+    color: #e6e6e6;
   }
 
   pre, code {
@@ -94,10 +122,12 @@
     padding: 20px;
     text-align: center;
   }
+
   .footer a {
     color: #ff8c00;
     text-decoration: none;
   }
+
   .footer a:hover {
     color: #ffa500;
   }
@@ -128,28 +158,42 @@
 <section id="projects">
   <h3>Selected Projects</h3>
 
-  <div class="project">
-    <h4>Industrial Controller Board</h4>
-    <p>Industrial controller PCB designed for monitoring and control applications.</p>
-    <p><strong>My role:</strong> schematic & PCB design, power architecture, hardware bring-up.</p>
-    <p><strong>Key Components:</strong> STM32F407, RS485, CAN, DC/DC buck, LDO</p>
-    <img src="assets/industrial_controller.png" alt="Industrial Controller PCB">
-  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h4>Industrial Controller Board</h4>
+      <p>Industrial controller PCB designed for monitoring and control applications.</p>
+      <img src="assets/industrial_controller.png" alt="Industrial Controller PCB">
+    </div>
 
-  <div class="project">
-    <h4>Battery Powered IoT Device</h4>
-    <p>Low-power IoT device with wireless connectivity and embedded sensors.</p>
-    <p><strong>My role:</strong> PCB design, MCU programming, power management, prototyping.</p>
-    <p><strong>Key Components:</strong> ESP32, LiPo battery, I2C sensors</p>
-    <img src="assets/iot_device.png" alt="IoT Device PCB">
-  </div>
+    <div class="project-card">
+      <h4>Battery Powered IoT Device</h4>
+      <p>Low-power IoT device with wireless connectivity and embedded sensors.</p>
+      <img src="assets/iot_device.png" alt="IoT Device PCB">
+    </div>
 
-  <div class="project">
-    <h4>Motor Driver PCB</h4>
-    <p>High-current motor driver board for robotics applications.</p>
-    <p><strong>My role:</strong> schematic & PCB design, thermal management, prototyping.</p>
-    <p><strong>Key Components:</strong> MOSFETs, STM32 MCU, H-bridge drivers</p>
-    <img src="assets/motor_driver.png" alt="Motor Driver PCB">
+    <div class="project-card">
+      <h4>Motor Driver PCB</h4>
+      <p>High-current motor driver board for robotics applications.</p>
+      <img src="assets/motor_driver.png" alt="Motor Driver PCB">
+    </div>
+
+    <div class="project-card">
+      <h4>Sensor Expansion Board</h4>
+      <p>Board for adding multiple sensors to a main MCU platform.</p>
+      <img src="assets/sensor_board.png" alt="Sensor Expansion PCB">
+    </div>
+
+    <div class="project-card">
+      <h4>Power Supply Module</h4>
+      <p>Custom power supply PCB with DC/DC converters and LDOs.</p>
+      <img src="assets/power_supply.png" alt="Power Supply PCB">
+    </div>
+
+    <div class="project-card">
+      <h4>Robotics Controller</h4>
+      <p>Controller board for robotics with motor drivers and sensors.</p>
+      <img src="assets/robotics_controller.png" alt="Robotics Controller PCB">
+    </div>
   </div>
 </section>
 
