@@ -1,0 +1,52 @@
+---
+---
+
+@import "minima";
+
+/* ===== DARK THEME ===== */
+
+body {
+  background-color: #0d0d0d;
+  color: #e6e6e6;
+}
+
+/* Links */
+a {
+  color: #4da3ff;
+}
+
+a:hover {
+  color: #82c2ff;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+/* Navigation bar */
+.site-header {
+  background-color: #0d0d0d;
+  border-bottom: 1px solid #222;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0d0d0d;
+  border-top: 1px solid #222;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: #111;
+  color: #e6e6e6;
+}
+
+/* Tables (jeśli użyjesz) */
+table {
+  background-color: #0d0d0d;
+}
+
+th, td {
+  border: 1px solid #222;
+}
