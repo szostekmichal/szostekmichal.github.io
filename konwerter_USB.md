@@ -23,4 +23,4 @@ Industrial controller PCB designed for monitoring and control applications.
 - Successfully deployed in prototypes
 
 ## Images
-![PCB Render](../assets/industrial_controller.png)
+![PCB Render](../assets/IMG_8949.JPEG)
