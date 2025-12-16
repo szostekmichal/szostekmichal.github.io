@@ -1,4 +1,4 @@
-# Industrial Controller Board
+# Konwerter_USB
 
 ## Overview
 Industrial controller PCB designed for monitoring and control applications.
