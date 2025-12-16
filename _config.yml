@@ -1,6 +1,9 @@
 theme: minima
-include:
-  - _includes/head-custom.html
+plugins: [jekyll-feed]
+sass:
+  style: compressed
+
+
 
 
 sass:
