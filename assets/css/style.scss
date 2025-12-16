@@ -3,50 +3,46 @@
 
 @import "minima";
 
-/* ===== DARK THEME ===== */
+/* ===== FORCE DARK THEME ===== */
 
-body {
-  background-color: #0d0d0d;
-  color: #e6e6e6;
+html, body {
+  background-color: #0d0d0d !important;
+  color: #e6e6e6 !important;
 }
 
-/* Links */
-a {
-  color: #4da3ff;
-}
-
-a:hover {
-  color: #82c2ff;
+/* Content area */
+.page-content {
+  background-color: #0d0d0d !important;
 }
 
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
-/* Navigation bar */
+/* Links */
+a {
+  color: #4da3ff !important;
+}
+
+a:hover {
+  color: #82c2ff !important;
+}
+
+/* Header */
 .site-header {
-  background-color: #0d0d0d;
+  background-color: #0d0d0d !important;
   border-bottom: 1px solid #222;
 }
 
 /* Footer */
 .site-footer {
-  background-color: #0d0d0d;
+  background-color: #0d0d0d !important;
   border-top: 1px solid #222;
 }
 
 /* Code blocks */
 pre, code {
-  background-color: #111;
-  color: #e6e6e6;
-}
-
-/* Tables (jeśli użyjesz) */
-table {
-  background-color: #0d0d0d;
-}
-
-th, td {
-  border: 1px solid #222;
+  background-color: #111 !important;
+  color: #e6e6e6 !important;
 }
