@@ -1,5 +1,8 @@
 theme: minima
 
+sass:
+  style: compressed
+
 title: Michał Szostek – Hardware Portfolio
 description: Senior Hardware / Electronics Engineer – PCB Design & Embedded Systems
 
