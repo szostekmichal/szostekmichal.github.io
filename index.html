@@ -22,17 +22,21 @@
     background-color: #0d0d0d;
     padding: 20px;
     border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between; /* Imię po lewej, menu po prawej */
+    align-items: center;           /* Wyrównanie w pionie */
     position: sticky;
     top: 0;
     z-index: 100;
   }
 
-  .header h1 {
+  .header-left h1 {
     margin: 0;
     color: #ffffff;
   }
-  .header h2 {
-    margin: 5px 0 15px 0;
+
+  .header-left h2 {
+    margin: 5px 0 0 0;
     font-weight: normal;
     color: #e6e6e6;
   }
@@ -47,6 +51,7 @@
     text-decoration: none;
     font-weight: bold;
   }
+
   .nav a:hover {
     color: #ffa500;
   }
@@ -102,8 +107,10 @@
 
 <!-- HEADER + NAV -->
 <div class="header">
-  <h1>Michał Szostek</h1>
-  <h2>Senior Hardware / Electronics Engineer</h2>
+  <div class="header-left">
+    <h1>Michał Szostek</h1>
+    <h2>Senior Hardware / Electronics Engineer</h2>
+  </div>
   <div class="nav">
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
