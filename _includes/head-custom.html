@@ -4,9 +4,34 @@ html, body {
   color: #e6e6e6 !important;
 }
 
-a { color: #ff8c00 !important; }
-a:hover { color: #ffa500 !important; }
+/* Links - overriding minima */
+a, a:visited {
+  color: #ff8c00 !important; /* pomarańczowy */
+}
+a:hover, a:focus {
+  color: #ffa500 !important; /* jaśniejszy pomarańcz po hover */
+}
 
-.site-header, .site-footer { background-color: #0d0d0d !important; }
-pre, code { background-color: #111 !important; color: #e6e6e6 !important; }
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+/* Navigation bar */
+.site-header {
+  background-color: #0d0d0d !important;
+  border-bottom: 1px solid #222 !important;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0d0d0d !important;
+  border-top: 1px solid #222 !important;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: #111 !important;
+  color: #e6e6e6 !important;
+}
 </style>
