@@ -1,13 +1,10 @@
 theme: minima
-plugins: [jekyll-feed]
-sass:
-  style: compressed
+compressed
+
+include:
+  - _includes/head-custom.html
 
 
-
-
-sass:
-  style: compressed
 
 title: Michał Szostek – Hardware Portfolio
 description: Senior Hardware / Electronics Engineer – PCB Design & Embedded Systems
