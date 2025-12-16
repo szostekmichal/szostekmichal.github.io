@@ -22,7 +22,7 @@ and prototyping. Focused on reliable, production-ready hardware solutions.
 
 ## 📂 Selected Projects
 - [Konwerter USB](szostekmichal.github.io/konwerter_USB.md)
-- [Battery Powered IoT Device](projects/iot-device.md)
+- [Battery Powered IoT Device](szostekmichal.github.io/konwerter_USB.md)
 - [Motor Driver PCB](projects/motor-driver.md)
 
 ---
