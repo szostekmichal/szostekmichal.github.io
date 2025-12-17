@@ -126,12 +126,6 @@
       margin: 0 0 8px;
     }
 
-    .project-card img {
-      width: 100%;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-
     /* MODAL */
     .modal {
       display: none;
@@ -145,12 +139,15 @@
 
     .modal-content {
       background: #1f1f1f;
-      max-width: 600px;
+      max-width: 700px;
       width: 90%;
       padding: 20px;
       border-radius: 8px;
       transform: scale(0);
       animation: grow 0.3s forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     @keyframes grow {
@@ -170,6 +167,33 @@
       font-size: 26px;
       cursor: pointer;
       color: #ff8c00;
+    }
+
+    .modal-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .modal-description {
+      font-size: 1em;
+      line-height: 1.6;
+      text-align: center;
     }
 
     /* FOOTER */
@@ -258,52 +282,100 @@
     </div>
   </section>
 
-  <!-- MODALE -->
+  <!-- MODALE DLA PROJEKTÓW -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h4>Industrial Controller Board</h4>
-      <p>Industrial monitoring & control PCB</p>
+      <h4 class="modal-title">Industrial Controller Board</h4>
+      <div class="modal-gallery">
+        <img src="image1-1.jpg" alt="Projekt 1">
+        <img src="image1-2.jpg" alt="Projekt 2">
+        <img src="image1-3.jpg" alt="Projekt 3">
+        <img src="image1-4.jpg" alt="Projekt 4">
+      </div>
+      <p class="modal-description">
+        Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.
+      </p>
     </div>
   </div>
 
   <div id="modal2" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal2')">&times;</span>
-      <h4>Battery Powered IoT Device</h4>
-      <p>Low-power wireless IoT hardware</p>
+      <h4 class="modal-title">Battery Powered IoT Device</h4>
+      <div class="modal-gallery">
+        <img src="image2-1.jpg" alt="Projekt 1">
+        <img src="image2-2.jpg" alt="Projekt 2">
+        <img src="image2-3.jpg" alt="Projekt 3">
+        <img src="image2-4.jpg" alt="Projekt 4">
+      </div>
+      <p class="modal-description">
+        Low-power wireless IoT hardware. Designed for remote monitoring and energy efficiency.
+      </p>
     </div>
   </div>
 
   <div id="modal3" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal3')">&times;</span>
-      <h4>Motor Driver PCB</h4>
-      <p>High-current motor control</p>
+      <h4 class="modal-title">Motor Driver PCB</h4>
+      <div class="modal-gallery">
+        <img src="image3-1.jpg" alt="Projekt 1">
+        <img src="image3-2.jpg" alt="Projekt 2">
+        <img src="image3-3.jpg" alt="Projekt 3">
+        <img src="image3-4.jpg" alt="Projekt 4">
+      </div>
+      <p class="modal-description">
+        High-current motor control PCB for robotics and automation systems.
+      </p>
     </div>
   </div>
 
   <div id="modal4" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal4')">&times;</span>
-      <h4>Sensor Expansion Board</h4>
-      <p>Multi-sensor expansion</p>
+      <h4 class="modal-title">Sensor Expansion Board</h4>
+      <div class="modal-gallery">
+        <img src="image4-1.jpg" alt="Projekt 1">
+        <img src="image4-2.jpg" alt="Projekt 2">
+        <img src="image4-3.jpg" alt="Projekt 3">
+        <img src="image4-4.jpg" alt="Projekt 4">
+      </div>
+      <p class="modal-description">
+        Multi-sensor expansion board for flexible prototyping and testing.
+      </p>
     </div>
   </div>
 
   <div id="modal5" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal5')">&times;</span>
-      <h4>Power Supply Module</h4>
-      <p>DC/DC & LDO power design</p>
+      <h4 class="modal-title">Power Supply Module</h4>
+      <div class="modal-gallery">
+        <img src="image5-1.jpg" alt="Projekt 1">
+        <img src="image5-2.jpg" alt="Projekt 2">
+        <img src="image5-3.jpg" alt="Projekt 3">
+        <img src="image5-4.jpg" alt="Projekt 4">
+      </div>
+      <p class="modal-description">
+        DC/DC & LDO power design for stable and efficient energy management.
+      </p>
     </div>
   </div>
 
   <div id="modal6" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal6')">&times;</span>
-      <h4>Robotics Controller</h4>
-      <p>Integrated robotics control</p>
+      <h4 class="modal-title">Robotics Controller</h4>
+      <div class="modal-gallery">
+        <img src="image6-1.jpg" alt="Projekt 1">
+        <img src="image6-2.jpg" alt="Projekt 2">
+        <img src="image6-3.jpg" alt="Projekt 3">
+        <img src="image6-4.jpg" alt="Projekt 4">
+      </div>
+      <p class="modal-description">
+        Integrated robotics control board for automation and smart devices.
+      </p>
     </div>
   </div>
 
@@ -377,7 +449,6 @@
       modal.style.display = "none";
     }
 
-    // Zamknięcie kliknięciem poza modal
     window.addEventListener("click", function (e) {
       const modals = document.querySelectorAll(".modal");
       modals.forEach(modal => {
