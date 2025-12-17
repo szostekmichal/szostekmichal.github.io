@@ -4,62 +4,142 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Michał Szostek – Hardware Portfolio</title>
+
 <style>
-  html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-  body { background-color: #121212; color: #e6e6e6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin:0; padding:0; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  background-color: #121212;
+  color: #e6e6e6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
 
-  /* HEADER */
-  .header { background-color: #121212; padding:20px; border-bottom:1px solid #222; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; }
-  .header-left h1 { margin:0; color:#fff; }
-  .header-left h2 { margin:5px 0 0 0; font-weight:normal; color:#ff8c00; }
-  .nav { display:flex; gap:20px; align-items:center; }
-  .nav a { color:#ff8c00; text-decoration:none; font-weight:bold; }
-  .nav a:hover { color:#ffa500; }
+/* HEADER */
+.header {
+  background-color: #121212;
+  padding: 20px;
+  border-bottom: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-left h1 {
+  margin: 0;
+  color: #fff;
+}
+.header-left h2 {
+  margin: 5px 0 0 0;
+  font-weight: normal;
+  color: #ff8c00;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.nav a {
+  color: #ff8c00;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav a:hover {
+  color: #ffa500;
+}
 
-  /* LANGUAGE SWITCH */
-  .language-switch { display:flex; gap:10px; align-items:center; }
-  .language-switch button { background-color:#1a1a1a; color:#ff8c00; border:1px solid #ff8c00; padding:5px 10px; cursor:pointer; border-radius:4px; font-weight:bold; }
-  .language-switch button:hover { background-color:#ff8c00; color:#121212; }
+/* LANGUAGE SWITCH */
+.language-switch {
+  display: flex;
+  gap: 10px;
+}
+.language-switch button {
+  background: #1a1a1a;
+  color: #ff8c00;
+  border: 1px solid #ff8c00;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.language-switch button:hover {
+  background: #ff8c00;
+  color: #121212;
+}
 
-  /* SECTIONS */
-  section { padding:60px 20px; max-width:1000px; margin:0 auto; }
-  #home h3, #projects h3, #contact h3 { font-size:2em; font-family:Arial, Helvetica, sans-serif; text-align:center; margin-top:0; color:#fff; }
-  #home, #contact { text-align:center; }
-  #contact a { color:#fff; text-decoration:none; font-weight:bold; }
-  #contact a:hover { color:#ffa500; }
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+section h3 {
+  font-size: 2em;
+  text-align: center;
+  color: #fff;
+}
+#home, #contact {
+  text-align: center;
+}
 
-  /* PROJECTS GRID */
-  .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:20px; }
-  .project-card { background-color:#1a1a1a; border:1px solid #222; padding:15px; border-radius:8px; transition: transform 0.2s, box-shadow 0.2s; cursor:pointer; }
-  .project-card:hover { transform:translateY(-5px); box-shadow:0 5px 15px rgba(255,140,0,0.5); }
-  .project-card img { width:100%; height:auto; margin-top:10px; border:1px solid #222; border-radius:4px; }
-  .project-card h4 { margin:0 0 10px 0; color:#fff; }
-  .project-card p { margin:0; color:#e6e6e6; }
+/* PROJECTS GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.project-card {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255,140,0,0.5);
+}
 
-  /* MODAL */
-  .modal { display:none; position:fixed; z-index:200; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.8); }
-  .modal-content { background-color:#1a1a1a; margin:10% auto; padding:20px; border:1px solid #222; width:80%; max-width:600px; border-radius:8px; color:#e6e6e6; }
-  .close { color:#ff8c00; float:right; font-size:28px; font-weight:bold; cursor:pointer; }
-  .close:hover { color:#ffa500; }
-
-  /* FOOTER */
-  .footer { background-color:#121212; border-top:1px solid #222; padding:20px; text-align:center; }
-  .footer a { color:#ff8c00; text-decoration:none; }
-  .footer a:hover { color:#ffa500; }
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 200;
+}
+.modal-content {
+  background: #1a1a1a;
+  margin: 10% auto;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 8px;
+}
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff8c00;
+}
 </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <div class="header">
   <div class="header-left">
     <h1>Michał Szostek</h1>
-    <h2>Senior Hardware / Electronics Engineer</h2>
+    <h2 id="header-title">Senior Hardware / Electronics Engineer</h2>
   </div>
   <div class="nav">
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" id="nav-home">Home</a>
+    <a href="#projects" id="nav-projects">Projects</a>
+    <a href="#contact" id="nav-contact">Contact</a>
     <div class="language-switch">
       <button onclick="setLanguage('en')">EN</button>
       <button onclick="setLanguage('pl')">PL</button>
@@ -69,172 +149,63 @@
 
 <!-- HOME -->
 <section id="home">
-  <h3>Welcome</h3>
-  <p>Electronics engineer with 7+ years of experience in PCB design, hardware development, and prototyping. Focused on reliable, production-ready hardware solutions.</p>
+  <h3 id="home-title">Welcome</h3>
+  <p id="home-text"></p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h3>Selected Projects</h3>
+  <h3 id="projects-title">Selected Projects</h3>
   <div class="projects-grid">
-
-    <!-- Projekt 1 -->
-    <div class="project-card" onclick="openModal('modal1')">
-      <h4>Industrial Controller Board</h4>
-      <p>Industrial controller PCB designed for monitoring and control applications.</p>
-      <img src="assets/industrial_controller.png" alt="Industrial Controller PCB">
-    </div>
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal1')">&times;</span>
-        <h4>Industrial Controller Board</h4>
-        <p id="desc1-en">Advanced industrial controller for monitoring and control processes. MCU, sensors, interfaces, and protection included. Optimized for reliability.</p>
-        <p id="desc1-pl">Zaawansowany kontroler przemysłowy do monitorowania i sterowania procesami. MCU, czujniki, interfejsy i zabezpieczenia. Zoptymalizowany pod niezawodność.</p>
-        <img src="assets/industrial_controller.png" alt="Industrial Controller PCB">
-      </div>
-    </div>
-
-    <!-- Projekt 2 -->
-    <div class="project-card" onclick="openModal('modal2')">
-      <h4>Battery Powered IoT Device</h4>
-      <p>Low-power IoT device with wireless connectivity and embedded sensors.</p>
-      <img src="assets/iot_device.png" alt="IoT Device PCB">
-    </div>
-    <div id="modal2" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <h4>Battery Powered IoT Device</h4>
-        <p id="desc2-en">Low-power IoT device with wireless connectivity and sensors. Designed for monitoring and cloud data transfer.</p>
-        <p id="desc2-pl">Energooszczędne urządzenie IoT z łącznością bezprzewodową i czujnikami. Do monitorowania i przesyłania danych do chmury.</p>
-        <img src="assets/iot_device.png" alt="IoT Device PCB">
-      </div>
-    </div>
-
-    <!-- Projekt 3 -->
-    <div class="project-card" onclick="openModal('modal3')">
-      <h4>Motor Driver PCB</h4>
-      <p>High-current motor driver board for robotics applications.</p>
-      <img src="assets/motor_driver.png" alt="Motor Driver PCB">
-    </div>
-    <div id="modal3" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <h4>Motor Driver PCB</h4>
-        <p id="desc3-en">High-current motor driver board with overload protection for robotics applications.</p>
-        <p id="desc3-pl">Płytka sterownika silnika o dużym prądzie z zabezpieczeniem przeciążeniowym dla robotyki.</p>
-        <img src="assets/motor_driver.png" alt="Motor Driver PCB">
-      </div>
-    </div>
-
-    <!-- Projekt 4 -->
-    <div class="project-card" onclick="openModal('modal4')">
-      <h4>Sensor Expansion Board</h4>
-      <p>Board for adding multiple sensors to a main MCU platform.</p>
-      <img src="assets/sensor_board.png" alt="Sensor Expansion PCB">
-    </div>
-    <div id="modal4" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal4')">&times;</span>
-        <h4>Sensor Expansion Board</h4>
-        <p id="desc4-en">Expansion module for adding multiple sensors to MCU platform. Supports several protocols and rapid prototyping.</p>
-        <p id="desc4-pl">Moduł rozszerzający MCU o dodatkowe czujniki. Obsługuje wiele protokołów i szybkie prototypowanie.</p>
-        <img src="assets/sensor_board.png" alt="Sensor Expansion PCB">
-      </div>
-    </div>
-
-    <!-- Projekt 5 -->
-    <div class="project-card" onclick="openModal('modal5')">
-      <h4>Power Supply Module</h4>
-      <p>Custom power supply PCB with DC/DC converters and LDOs.</p>
-      <img src="assets/power_supply.png" alt="Power Supply PCB">
-    </div>
-    <div id="modal5" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal5')">&times;</span>
-        <h4>Power Supply Module</h4>
-        <p id="desc5-en">PCB power supply module with DC/DC converters and LDOs for stable voltage delivery.</p>
-        <p id="desc5-pl">Moduł zasilania PCB z konwerterami DC/DC i LDO dla stabilnego napięcia.</p>
-        <img src="assets/power_supply.png" alt="Power Supply PCB">
-      </div>
-    </div>
-
-    <!-- Projekt 6 -->
-    <div class="project-card" onclick="openModal('modal6')">
-      <h4>Robotics Controller</h4>
-      <p>Controller board for robotics with motor drivers and sensors.</p>
-      <img src="assets/robotics_controller.png" alt="Robotics Controller PCB">
-    </div>
-    <div id="modal6" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal6')">&times;</span>
-        <h4>Robotics Controller</h4>
-        <p id="desc6-en">Complete robotics controller with motor drivers and sensors for easy control and automation.</p>
-        <p id="desc6-pl">Kompletny kontroler robotyczny z sterownikami silników i czujnikami do łatwego sterowania i automatyki.</p>
-        <img src="assets/robotics_controller.png" alt="Robotics Controller PCB">
-      </div>
-    </div>
-
+    <div class="project-card">Project 1</div>
+    <div class="project-card">Project 2</div>
+    <div class="project-card">Project 3</div>
+    <div class="project-card">Project 4</div>
+    <div class="project-card">Project 5</div>
+    <div class="project-card">Project 6</div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h3>Contact</h3>
-  <p id="contact-email">Email: <a href="mailto:your@email.com">your@email.com</a></p>
-  <p id="contact-github">GitHub: <a href="https://github.com/szostekmichal">szostekmichal</a></p>
-  <p id="contact-linkedin">LinkedIn: <a href="#">yourprofile</a></p>
+  <h3 id="contact-title">Contact</h3>
+  <p>Email: your@email.com</p>
+  <p>GitHub: szostekmichal</p>
+  <p>LinkedIn: yourprofile</p>
 </section>
 
-<!-- FOOTER -->
-<div class="footer">
-  <p>&copy; 2025 Michał Szostek</p>
-</div>
-
-<!-- SCRIPT -->
 <script>
-function openModal(id) { document.getElementById(id).style.display = "block"; }
-function closeModal(id) { document.getElementById(id).style.display = "none"; }
-window.onclick = function(event) { document.querySelectorAll('.modal').forEach(modal => { if(event.target===modal) modal.style.display="none"; }); }
-
 const texts = {
-  en:{
-    headerTitle:"Senior Hardware / Electronics Engineer",
-    navHome:"Home",
-    navProjects:"Projects",
-    navContact:"Contact",
-    homeHeader:"Welcome",
-    homeText:"Electronics engineer with 7+ years of experience in PCB design, hardware development, and prototyping. Focused on reliable, production-ready hardware solutions.",
-    projectsHeader:"Selected Projects",
-    contactHeader:"Contact"
+  en: {
+    header: "Senior Hardware / Electronics Engineer",
+    nav: ["Home", "Projects", "Contact"],
+    homeTitle: "Welcome",
+    homeText: "Electronics engineer with 7+ years of experience in PCB design, hardware development, and prototyping.",
+    projects: "Selected Projects",
+    contact: "Contact"
   },
-  pl:{
-    headerTitle:"Starszy Inżynier Sprzętu / Elektroniki",
-    navHome:"Strona Główna",
-    navProjects:"Projekty",
-    navContact:"Kontakt",
-    homeHeader:"Witaj",
-    homeText:"Inżynier elektroniki z ponad 7-letnim doświadczeniem w projektowaniu PCB, rozwoju sprzętu i prototypowaniu. Skupiony na niezawodnych, gotowych do produkcji rozwiązaniach sprzętowych.",
-    projectsHeader:"Wybrane Projekty",
-    contactHeader:"Kontakt"
+  pl: {
+    header: "Inżynier Elektronik",
+    nav: ["Strona główna", "Projekty", "Kontakt"],
+    homeTitle: "Profil zawodowy",
+    homeText: "Jestem inżynierem elektroniki z doświadczeniem w projektowaniu oraz uruchamianiu urządzeń elektronicznych — od koncepcji, przez schemat i PCB, aż po testy oraz wdrożenie do produkcji. Specjalizuję się w projektach opartych o mikrokontrolery, interfejsy komunikacyjne oraz układy zasilania, ze szczególnym naciskiem na niezawodność i jakość projektu. Na co dzień pracuję z narzędziami do projektowania PCB, przygotowuję dokumentację produkcyjną oraz współpracuję z zespołami firmware, mechaniki i produkcji. Mam praktyczne doświadczenie w prototypowaniu, debugowaniu sprzętu oraz rozwiązywaniu problemów pojawiających się na etapie uruchomień i testów.",
+    projects: "Wybrane projekty",
+    contact: "Kontakt"
   }
 };
 
-function setLanguage(lang){
-  document.querySelector(".header-left h2").textContent = texts[lang].headerTitle;
-  const navLinks=document.querySelectorAll(".nav a");
-  navLinks[0].textContent=texts[lang].navHome;
-  navLinks[1].textContent=texts[lang].navProjects;
-  navLinks[2].textContent=texts[lang].navContact;
-  document.querySelector("#home h3").textContent=texts[lang].homeHeader;
-  document.querySelector("#home p").textContent=texts[lang].homeText;
-  document.querySelector("#projects h3").textContent=texts[lang].projectsHeader;
-  document.querySelector("#contact h3").textContent=texts[lang].contactHeader;
-  [1,2,3,4,5,6].forEach(i=>{
-    document.getElementById(`desc${i}-en`).style.display=(lang==="en")?"block":"none";
-    document.getElementById(`desc${i}-pl`).style.display=(lang==="pl")?"block":"none";
-  });
+function setLanguage(lang) {
+  document.getElementById("header-title").textContent = texts[lang].header;
+  document.getElementById("nav-home").textContent = texts[lang].nav[0];
+  document.getElementById("nav-projects").textContent = texts[lang].nav[1];
+  document.getElementById("nav-contact").textContent = texts[lang].nav[2];
+  document.getElementById("home-title").textContent = texts[lang].homeTitle;
+  document.getElementById("home-text").textContent = texts[lang].homeText;
+  document.getElementById("projects-title").textContent = texts[lang].projects;
+  document.getElementById("contact-title").textContent = texts[lang].contact;
 }
-setLanguage('en'); // domyślnie EN
+
+setLanguage("en");
 </script>
 
 </body>
