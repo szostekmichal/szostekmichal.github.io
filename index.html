@@ -139,14 +139,30 @@
       inset: 0;
       background: rgba(0, 0, 0, .85);
       z-index: 200;
+      justify-content: center;
+      align-items: center;
     }
 
     .modal-content {
       background: #1f1f1f;
       max-width: 600px;
-      margin: 8% auto;
+      width: 90%;
       padding: 20px;
       border-radius: 8px;
+      transform: scale(0);
+      animation: grow 0.3s forwards;
+    }
+
+    @keyframes grow {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .close {
@@ -163,22 +179,22 @@
       padding: 20px;
     }
 
-    .github,
-    .linkedin {
-      color: #ff8c00;
-      /* pomarańczowy */
-      text-decoration: none;
-      /* usuwa podkreślenie */
-      font-weight: bold;
-      margin-right: 15px;
-      margin-left: 15px;
-      /* odstęp między linkami */
+    /* GITHUB/LINKEDIN */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 10px;
     }
 
-    .github:hover,
-    .linkedin:hover {
+    .contact-links a {
+      color: #ff8c00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-links a:hover {
       color: #ffa500;
-      /* jaśniejszy pomarańczowy po najechaniu */
     }
   </style>
 </head>
@@ -219,27 +235,22 @@
         <h4>Industrial Controller Board</h4>
         <p>Industrial monitoring & control PCB</p>
       </div>
-
       <div class="project-card" onclick="openModal('modal2')">
         <h4>Battery Powered IoT Device</h4>
         <p>Low-power wireless IoT hardware</p>
       </div>
-
       <div class="project-card" onclick="openModal('modal3')">
         <h4>Motor Driver PCB</h4>
         <p>High-current motor control</p>
       </div>
-
       <div class="project-card" onclick="openModal('modal4')">
         <h4>Sensor Expansion Board</h4>
         <p>Multi-sensor expansion</p>
       </div>
-
       <div class="project-card" onclick="openModal('modal5')">
         <h4>Power Supply Module</h4>
         <p>DC/DC & LDO power design</p>
       </div>
-
       <div class="project-card" onclick="openModal('modal6')">
         <h4>Robotics Controller</h4>
         <p>Integrated robotics control</p>
@@ -247,16 +258,64 @@
     </div>
   </section>
 
+  <!-- MODALE -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h4>Industrial Controller Board</h4>
+      <p>Industrial monitoring & control PCB</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h4>Battery Powered IoT Device</h4>
+      <p>Low-power wireless IoT hardware</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h4>Motor Driver PCB</h4>
+      <p>High-current motor control</p>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h4>Sensor Expansion Board</h4>
+      <p>Multi-sensor expansion</p>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <h4>Power Supply Module</h4>
+      <p>DC/DC & LDO power design</p>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal6')">&times;</span>
+      <h4>Robotics Controller</h4>
+      <p>Integrated robotics control</p>
+    </div>
+  </div>
+
   <!-- CONTACT -->
   <section id="contact">
-    <h3 id="contactHeader">Contact</h3>
+    <h3 id="contactHeader">Kontakt</h3>
     <p id="contactEmail" style="color:white;">Email: szostekmichal.praca@gmail.com</p>
     <p id="contactPhone" style="color:white;">Telefon: 573 055 222</p>
-    <p>
-      <a href="https://github.com/szostekmichal" target="_blank" class="github">GitHub</a>
-      <a href="https://www.linkedin.com/in/michał-szostek-3a8435157" target="_blank" class="linkedin">LinkedIn</a>
-    </p>
-
+    <div class="contact-links">
+      <a href="https://github.com/szostekmichal" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/michał-szostek-3a8435157" target="_blank">LinkedIn</a>
+    </div>
   </section>
 
   <div class="footer">
@@ -304,6 +363,29 @@
       document.getElementById("contactEmail").textContent = texts[lang].email;
     }
     setLanguage("pl");
+
+    // MODAL JS
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.style.display = "flex";
+      const content = modal.querySelector(".modal-content");
+      content.style.animation = "grow 0.3s forwards";
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      modal.style.display = "none";
+    }
+
+    // Zamknięcie kliknięciem poza modal
+    window.addEventListener("click", function (e) {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach(modal => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
   </script>
 
 </body>
