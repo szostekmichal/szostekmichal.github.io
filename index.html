@@ -8,6 +8,7 @@
   /* ===== GENERAL STYLES ===== */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* wysokość sticky header */
   }
   body {
     background-color: #121212; /* mniej czarne tło */
@@ -61,15 +62,11 @@
     padding: 60px 20px;
     max-width: 1000px;
     margin: 0 auto;
-
-    /* OFFSET dla sticky header */
-    padding-top: 100px; /* wysokość header + trochę luzu */
-    margin-top: -100px;
   }
 
   /* ===== SECTION HEADERS ===== */
   #home h3, #projects h3, #contact h3 {
-    font-size: 2.5em; /* większa czcionka */
+    font-size: 2em; /* zmniejszone nagłówki */
     font-family: Arial, Helvetica, sans-serif; /* prosta czcionka */
     text-align: center;
     margin-top: 0;
