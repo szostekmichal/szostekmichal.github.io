@@ -8,10 +8,11 @@
 <style>
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
 }
+
 body {
-  background-color: #121212;
+  background-color: #181818;
   color: #e6e6e6;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
@@ -19,9 +20,9 @@ body {
 
 /* HEADER */
 .header {
-  background-color: #121212;
-  padding: 20px;
-  border-bottom: 1px solid #222;
+  background-color: #181818;
+  padding: 20px 30px;
+  border-bottom: 1px solid #2a2a2a;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,43 +30,46 @@ body {
   top: 0;
   z-index: 100;
 }
+
 .header-left h1 {
   margin: 0;
   color: #fff;
 }
+
 .header-left h2 {
-  margin: 5px 0 0 0;
+  margin: 6px 0 0;
   font-weight: normal;
   color: #ff8c00;
+  font-size: 1.1em;
 }
+
+/* NAV */
 .nav {
   display: flex;
-  gap: 20px;
+  gap: 22px;
   align-items: center;
 }
+
 .nav a {
   color: #ff8c00;
   text-decoration: none;
   font-weight: bold;
 }
+
 .nav a:hover {
   color: #ffa500;
 }
 
-/* LANGUAGE SWITCH */
-.language-switch {
-  display: flex;
-  gap: 10px;
-}
+/* LANGUAGE */
 .language-switch button {
-  background: #1a1a1a;
+  background: #1f1f1f;
   color: #ff8c00;
   border: 1px solid #ff8c00;
   padding: 5px 10px;
-  cursor: pointer;
   border-radius: 4px;
-  font-weight: bold;
+  cursor: pointer;
 }
+
 .language-switch button:hover {
   background: #ff8c00;
   color: #121212;
@@ -73,35 +77,58 @@ body {
 
 /* SECTIONS */
 section {
+  padding: 80px 20px;
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 60px 20px;
+  margin: auto;
 }
+
 section h3 {
-  font-size: 2em;
+  font-size: 2.2em;
   text-align: center;
-  color: #fff;
+  margin-bottom: 25px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-#home, #contact {
+
+#home,
+#contact {
   text-align: center;
 }
 
-/* PROJECTS GRID */
+#home p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
 .project-card {
-  background: #1a1a1a;
-  border: 1px solid #222;
-  padding: 15px;
+  background: #1f1f1f;
+  border: 1px solid #2a2a2a;
+  padding: 16px;
   border-radius: 8px;
   cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
 }
+
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255,140,0,0.5);
+  box-shadow: 0 5px 15px rgba(255,140,0,.4);
+}
+
+.project-card h4 {
+  margin: 0 0 8px;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 10px;
 }
 
 /* MODAL */
@@ -109,21 +136,30 @@ section h3 {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,.85);
   z-index: 200;
 }
+
 .modal-content {
-  background: #1a1a1a;
-  margin: 10% auto;
-  padding: 20px;
+  background: #1f1f1f;
   max-width: 600px;
+  margin: 8% auto;
+  padding: 20px;
   border-radius: 8px;
 }
+
 .close {
   float: right;
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
   color: #ff8c00;
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid #2a2a2a;
+  text-align: center;
+  padding: 20px;
 }
 </style>
 </head>
@@ -134,12 +170,14 @@ section h3 {
 <div class="header">
   <div class="header-left">
     <h1>Michał Szostek</h1>
-    <h2 id="header-title">Senior Hardware / Electronics Engineer</h2>
+    <h2 id="headerTitle">Inżynier Elektronik</h2>
   </div>
+
   <div class="nav">
-    <a href="#home" id="nav-home">Home</a>
-    <a href="#projects" id="nav-projects">Projects</a>
-    <a href="#contact" id="nav-contact">Contact</a>
+    <a href="#home" id="navHome">Home</a>
+    <a href="#projects" id="navProjects">Projects</a>
+    <a href="#contact" id="navContact">Contact</a>
+
     <div class="language-switch">
       <button onclick="setLanguage('en')">EN</button>
       <button onclick="setLanguage('pl')">PL</button>
@@ -149,63 +187,98 @@ section h3 {
 
 <!-- HOME -->
 <section id="home">
-  <h3 id="home-title">Welcome</h3>
-  <p id="home-text"></p>
+  <h3 id="homeHeader">Welcome</h3>
+  <p id="homeText"></p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h3 id="projects-title">Selected Projects</h3>
+  <h3 id="projectsHeader">Selected Projects</h3>
+
   <div class="projects-grid">
-    <div class="project-card">Project 1</div>
-    <div class="project-card">Project 2</div>
-    <div class="project-card">Project 3</div>
-    <div class="project-card">Project 4</div>
-    <div class="project-card">Project 5</div>
-    <div class="project-card">Project 6</div>
+    <div class="project-card" onclick="openModal('modal1')">
+      <h4>Industrial Controller Board</h4>
+      <p>Industrial monitoring & control PCB</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal2')">
+      <h4>Battery Powered IoT Device</h4>
+      <p>Low-power wireless IoT hardware</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal3')">
+      <h4>Motor Driver PCB</h4>
+      <p>High-current motor control</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal4')">
+      <h4>Sensor Expansion Board</h4>
+      <p>Multi-sensor expansion</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal5')">
+      <h4>Power Supply Module</h4>
+      <p>DC/DC & LDO power design</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('modal6')">
+      <h4>Robotics Controller</h4>
+      <p>Integrated robotics control</p>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h3 id="contact-title">Contact</h3>
-  <p>Email: your@email.com</p>
-  <p>GitHub: szostekmichal</p>
-  <p>LinkedIn: yourprofile</p>
+  <h3 id="contactHeader">Contact</h3>
+  <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+  <p>GitHub: <a href="https://github.com/szostekmichal">szostekmichal</a></p>
+  <p>LinkedIn: <a href="#">yourprofile</a></p>
 </section>
+
+<div class="footer">
+  © 2025 Michał Szostek
+</div>
 
 <script>
 const texts = {
   en: {
-    header: "Senior Hardware / Electronics Engineer",
-    nav: ["Home", "Projects", "Contact"],
-    homeTitle: "Welcome",
-    homeText: "Electronics engineer with 7+ years of experience in PCB design, hardware development, and prototyping.",
-    projects: "Selected Projects",
-    contact: "Contact"
+    headerTitle: "Electronics Engineer",
+    navHome: "Home",
+    navProjects: "Projects",
+    navContact: "Contact",
+    homeHeader: "Welcome",
+    homeText:
+      "Electronics engineer with experience in designing and commissioning electronic devices — from concept, schematic and PCB to testing and production deployment.",
+    projectsHeader: "Selected Projects",
+    contactHeader: "Contact"
   },
+
   pl: {
-    header: "Inżynier Elektronik",
-    nav: ["Strona główna", "Projekty", "Kontakt"],
-    homeTitle: "Profil zawodowy",
-    homeText: "Jestem inżynierem elektroniki z doświadczeniem w projektowaniu oraz uruchamianiu urządzeń elektronicznych — od koncepcji, przez schemat i PCB, aż po testy oraz wdrożenie do produkcji. Specjalizuję się w projektach opartych o mikrokontrolery, interfejsy komunikacyjne oraz układy zasilania, ze szczególnym naciskiem na niezawodność i jakość projektu. Na co dzień pracuję z narzędziami do projektowania PCB, przygotowuję dokumentację produkcyjną oraz współpracuję z zespołami firmware, mechaniki i produkcji. Mam praktyczne doświadczenie w prototypowaniu, debugowaniu sprzętu oraz rozwiązywaniu problemów pojawiających się na etapie uruchomień i testów.",
-    projects: "Wybrane projekty",
-    contact: "Kontakt"
+    headerTitle: "Inżynier Elektronik",
+    navHome: "Strona główna",
+    navProjects: "Projekty",
+    navContact: "Kontakt",
+    homeHeader: "Profil zawodowy",
+    homeText:
+      "Jestem inżynierem elektroniki z doświadczeniem w projektowaniu oraz uruchamianiu urządzeń elektronicznych — od koncepcji, przez schemat i PCB, aż po testy oraz wdrożenie do produkcji. Specjalizuję się w projektach opartych o mikrokontrolery, interfejsy komunikacyjne oraz układy zasilania, ze szczególnym naciskiem na niezawodność i jakość projektu. Na co dzień pracuję z narzędziami do projektowania PCB, przygotowuję dokumentację produkcyjną oraz współpracuję z zespołami firmware, mechaniki i produkcji. Mam praktyczne doświadczenie w prototypowaniu, debugowaniu sprzętu oraz rozwiązywaniu problemów pojawiających się na etapie uruchomień i testów.",
+    projectsHeader: "Wybrane projekty",
+    contactHeader: "Kontakt"
   }
 };
 
 function setLanguage(lang) {
-  document.getElementById("header-title").textContent = texts[lang].header;
-  document.getElementById("nav-home").textContent = texts[lang].nav[0];
-  document.getElementById("nav-projects").textContent = texts[lang].nav[1];
-  document.getElementById("nav-contact").textContent = texts[lang].nav[2];
-  document.getElementById("home-title").textContent = texts[lang].homeTitle;
-  document.getElementById("home-text").textContent = texts[lang].homeText;
-  document.getElementById("projects-title").textContent = texts[lang].projects;
-  document.getElementById("contact-title").textContent = texts[lang].contact;
+  document.getElementById("headerTitle").textContent = texts[lang].headerTitle;
+  document.getElementById("navHome").textContent = texts[lang].navHome;
+  document.getElementById("navProjects").textContent = texts[lang].navProjects;
+  document.getElementById("navContact").textContent = texts[lang].navContact;
+  document.getElementById("homeHeader").textContent = texts[lang].homeHeader;
+  document.getElementById("homeText").textContent = texts[lang].homeText;
+  document.getElementById("projectsHeader").textContent = texts[lang].projectsHeader;
+  document.getElementById("contactHeader").textContent = texts[lang].contactHeader;
 }
 
-setLanguage("en");
+setLanguage("pl");
 </script>
 
 </body>
