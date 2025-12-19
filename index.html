@@ -195,8 +195,13 @@
     .modal-description {
       font-size: 1em;
       line-height: 1.6;
-      text-align: center;
+      text-align: left;;
     }
+     .modal-description2 {
+      font-size: 1em;
+      line-height: 1.6;
+      text-align: center;
+      color: #b0b0b0;
 
     /* FOOTER */
     .footer {
@@ -312,7 +317,7 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h4 class="modal-title">Industrial Controller Board</h4>
+      <h4 class="modal-title">Zasilacz PoE do kontrolera kontroli dostępu</h4>
       <div class="modal-gallery">
         <img src="image1-1.jpg" alt="Projekt 1">
         <img src="image1-2.jpg" alt="Projekt 2">
@@ -320,15 +325,21 @@
         <img src="image1-4.jpg" alt="Projekt 4">
       </div>
       <p class="modal-description">
-        Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>Industrial monitoring & control PCB. Project focused on high reliability and robust power circuits.<br>
-      </p>
+Nakładka na główną płytę kontrolera kontroli dostępu, umożliwiająca zasilanie urządzenia poprzez Power over Ethernet (PoE).<br><br>
+Płytka została zaprojektowana jako moduł rozszerzający i zawiera:<br>
+•	sekcję zasilacza PoE (IEEE 802.3af / 802.3at),<br>
+•	miejsce do montażu mikrokomputera z systemem Linux,<br><br>
+Rozwiązanie eliminuje konieczność stosowania dodatkowego zasilacza, upraszczając instalację i zwiększając niezawodność systemu.<br>
+<br>
+        <p class="modal-description2">
+Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną.
     </div>
   </div>
 
   <div id="modal2" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal2')">&times;</span>
-      <h4 class="modal-title">Battery Powered IoT Device</h4>
+      <h4 class="modal-title">Sterownik przemysłowej komory klimatycznej</h4>
       <div class="modal-gallery">
         <img src="image2-1.jpg" alt="Projekt 1">
         <img src="image2-2.jpg" alt="Projekt 2">
@@ -336,7 +347,23 @@
         <img src="image2-4.jpg" alt="Projekt 4">
       </div>
       <p class="modal-description">
-        Low-power wireless IoT hardware. Designed for remote monitoring and energy efficiency.
+Sterownik składa się z płyty głównej wyposażonej w mikrokomputer z wbudowanym interfejsem Ethernet oraz z kilku modułów rozszerzających, które zwiększają funkcjonalność systemu.<br><br>
+Moduły rozszerzeń zapewniają:<br>
+•	pomiar temperatury,<br>
+•	sterowanie silnikami krokowymi,<br>
+•	wyjścia przekaźnikowe oraz PNP,<br>
+•	wejścia analogowe (ADC),<br>
+•	obsługę wyświetlacza,<br>
+•	pomiar EC (przewodności elektrycznej).<br><br>
+Komunikacja pomiędzy płytami realizowana jest za pomocą interfejsu RS-485.<br>
+Każdy sterownik wyposażony został w układ watchdog, zwiększający niezawodność pracy systemu.<br><br>
+Urządzenia przeznaczone są do pracy w trudnych warunkach przemysłowych, dlatego szczególny nacisk położono na:<br>
+•	izolację galwaniczną,<br>
+•	filtrowanie sygnałów,<br>
+•	kompleksowe zabezpieczenie wszystkich wejść i wyjść (przeciwprzepięciowe, nadprądowe, ESD).
+        <br>
+        <p class="modal-description2">
+Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną.
       </p>
     </div>
   </div>
@@ -344,7 +371,7 @@
   <div id="modal3" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal3')">&times;</span>
-      <h4 class="modal-title">Motor Driver PCB</h4>
+      <h4 class="modal-title">Samochodowy kontroler magistrali CAN</h4>
       <div class="modal-gallery">
         <img src="image3-1.jpg" alt="Projekt 1">
         <img src="image3-2.jpg" alt="Projekt 2">
@@ -352,7 +379,22 @@
         <img src="image3-4.jpg" alt="Projekt 4">
       </div>
       <p class="modal-description">
-        High-current motor control PCB for robotics and automation systems.
+Projekt składa się z dwóch płytek elektronicznych, przeznaczonych do zastosowań automotive.
+Pierwsza płytka to rozbudowany kontroler komunikacyjny, wyposażony w wiele interfejsów:
+•	CAN FD,
+•	USB,
+•	Ethernet,
+•	Bluetooth.
+Umożliwia ona komunikację z pojazdem na różne sposoby, w zależności od potrzeb użytkownika lub scenariusza zastosowania (diagnostyka, sterowanie, rejestracja danych).
+Druga płytka to wyspecjalizowany moduł sterujący, przeznaczony do kontroli przepustnicy układu wydechowego.
+Moduł komunikuje się z pojazdem poprzez magistralę CAN oraz steruje silnikiem DC przepustnicy.
+Rozwiązanie umożliwia zmianę charakterystyki dźwięku pojazdu w zależności od:
+•	wybranego trybu pracy,
+•	prędkości obrotowej silnika.
+
+        <br>
+        <p class="modal-description2">
+Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną.
       </p>
     </div>
   </div>
@@ -369,6 +411,9 @@
       </div>
       <p class="modal-description">
         Multi-sensor expansion board for flexible prototyping and testing.
+        <br>
+        <p class="modal-description2">
+Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną. 
       </p>
     </div>
   </div>
@@ -385,6 +430,9 @@
       </div>
       <p class="modal-description">
         DC/DC & LDO power design for stable and efficient energy management.
+        <br>
+        <p class="modal-description2">
+Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną         
       </p>
     </div>
   </div>
@@ -401,6 +449,9 @@
       </div>
       <p class="modal-description">
         Integrated robotics control board for automation and smart devices.
+        <br>
+        <p class="modal-description2">
+Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną.
       </p>
     </div>
   </div>
