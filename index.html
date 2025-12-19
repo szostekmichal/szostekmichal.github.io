@@ -487,7 +487,7 @@ Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez sch
     © 2025 Michał Szostek
   </div>
 
- <script>
+<script>
 const texts = {
   en: {
     headerTitle: "Electronics Engineer",
@@ -504,27 +504,84 @@ const texts = {
     projects: {
       modal1: {
         title: "PoE Power Supply for Access Control Controller",
-        cardText: "Extension board enabling Power over Ethernet and microcomputer integration"
+        cardText: "Extension board enabling Power over Ethernet and microcomputer integration",
+        description: `Extension board for the main access control controller, enabling Power over Ethernet (PoE).<br><br>
+Contains:<br>
+• PoE section (IEEE 802.3af / 802.3at),<br>
+• Slot for a Linux microcomputer.<br><br>
+Eliminates the need for an extra power supply, simplifying installation and increasing system reliability.`,
+        description2: "Project done entirely independently — from concept and design, through schematics and PCB, to commissioning and serial production."
       },
       modal2: {
         title: "Industrial Climate Chamber Controller",
-        cardText: "Analog measurements and digital I/O"
+        cardText: "Analog measurements and digital I/O",
+        description: `The controller consists of a main board with a microcomputer and several extension modules increasing system functionality.<br><br>
+Modules provide:<br>
+• Temperature measurement,<br>
+• Stepper motor control,<br>
+• Relay and PNP outputs,<br>
+• Analog inputs (ADC),<br>
+• Display support,<br>
+• EC (electrical conductivity) measurement.<br><br>
+Communication via RS-485. Watchdog increases reliability.<br>
+Designed for harsh industrial conditions with:<br>
+• Galvanic isolation,<br>
+• Signal filtering,<br>
+• Full protection of I/O (surge, overcurrent, ESD).`,
+        description2: "Project done entirely independently — from concept and design, through schematics and PCB, to commissioning and serial production."
       },
       modal3: {
         title: "Automotive CAN Bus Controller",
-        cardText: "Communication controller with multiple interfaces"
+        cardText: "Communication controller with multiple interfaces",
+        description: `The project includes two PCBs for automotive use.<br><br>
+The first board is a communication controller with:<br>
+• CAN FD,<br>
+• USB,<br>
+• Ethernet,<br>
+• Bluetooth.<br><br>
+It enables communication with the vehicle for diagnostics, control, and data logging.<br><br>
+The second board controls the throttle motor and communicates via CAN.<br>
+Allows changing vehicle sound characteristics based on:<br>
+• Selected mode,<br>
+• Engine RPM.`,
+        description2: "Project done entirely independently — from concept and design, through schematics and PCB, to commissioning and serial production."
       },
       modal4: {
         title: "USB to Ethernet Converter",
-        cardText: "Converter allowing remote access to USB devices"
+        cardText: "Converter allowing remote access to USB devices",
+        description: `Based on a Linux microcomputer, allows connecting any USB device and reading data remotely over Ethernet.<br><br>
+Eliminates USB cable length limitations and enables convenient remote usage.<br>
+Additional functions:<br>
+• Remote USB port power reset,<br>
+• Watchdog monitoring system operation.<br><br>
+Designed for stability, reliability, and easy integration with industrial and lab systems.`,
+        description2: "Project done entirely independently — from concept and design, through schematics and PCB, to commissioning and serial production."
       },
       modal5: {
         title: "Home Automation Controller",
-        cardText: "Compact controller based on Raspberry Pi and ESP"
+        cardText: "Compact controller based on Raspberry Pi and ESP",
+        description: `Compact controllers for DIN rail mounting.<br><br>
+Based on Raspberry Pi and ESP, enabling flexible configuration and smart home integration.<br>
+Features:<br>
+• Relay outputs,<br>
+• Digital inputs,<br>
+• 1-Wire bus for sensors.<br><br>
+Special focus on power section stability and protection against system hangs and uncontrolled restarts.`,
+        description2: "Project done entirely independently — from concept and design, through schematics and PCB, to commissioning and serial production."
       },
       modal6: {
         title: "Interactive Chair Controller",
-        cardText: "Controller managing full chair automation"
+        cardText: "Controller managing full chair automation",
+        description: `Designed to control an interactive chair with full feature management.<br><br>
+Features:<br>
+• Stepper motor control for seat angle,<br>
+• Buttons for user interface,<br>
+• LED controller for chair lighting,<br>
+• Sensors for light and temperature,<br>
+• Relays controlling external devices.<br><br>
+Logic unit is a Raspberry Pi microcomputer.<br>
+Main challenge: fit many functions on a small PCB while keeping system stable and reliable.`,
+        description2: "Project done entirely independently — from concept and design, through schematics and PCB, to commissioning and serial production."
       }
     }
   },
@@ -544,32 +601,90 @@ const texts = {
     projects: {
       modal1: {
         title: "Zasilacz PoE do kontrolera kontroli dostępu",
-        cardText: "Nakładka umożliwiająca zasilanie przez Ethernet i integrację mikrokomputera"
+        cardText: "Nakładka umożliwiająca zasilanie przez Ethernet i integrację mikrokomputera",
+        description: `Nakładka na główną płytę kontrolera kontroli dostępu, umożliwiająca zasilanie urządzenia poprzez Power over Ethernet (PoE).<br><br>
+Zawiera:<br>
+• sekcję zasilacza PoE (IEEE 802.3af / 802.3at),<br>
+• miejsce do montażu mikrokomputera z systemem Linux.<br><br>
+Eliminuje konieczność stosowania dodatkowego zasilacza, upraszczając instalację i zwiększając niezawodność systemu.`,
+        description2: "Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną."
       },
       modal2: {
         title: "Sterownik przemysłowej komory klimatycznej",
-        cardText: "Pomiary analogowe oraz wejścia i wyjścia cyfrowe"
+        cardText: "Pomiary analogowe oraz wejścia i wyjścia cyfrowe",
+        description: `Sterownik składa się z płyty głównej wyposażonej w mikrokomputer i kilku modułów rozszerzających funkcjonalność systemu.<br><br>
+Moduły zapewniają:<br>
+• pomiar temperatury,<br>
+• sterowanie silnikami krokowymi,<br>
+• wyjścia przekaźnikowe i PNP,<br>
+• wejścia analogowe (ADC),<br>
+• obsługę wyświetlacza,<br>
+• pomiar EC (przewodności elektrycznej).<br><br>
+Komunikacja przez RS-485. Układ watchdog zwiększa niezawodność.<br>
+Przeznaczone do pracy w trudnych warunkach przemysłowych z:<br>
+• izolacją galwaniczną,<br>
+• filtrowaniem sygnałów,<br>
+• pełną ochroną wejść/wyjść (przepięciowa, nadprądowa, ESD).`,
+        description2: "Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną."
       },
       modal3: {
         title: "Samochodowy kontroler magistrali CAN",
-        cardText: "Kontroler komunikacyjny z wieloma interfejsami"
+        cardText: "Kontroler komunikacyjny z wieloma interfejsami",
+        description: `Projekt składa się z dwóch płytek do zastosowań automotive.<br><br>
+Pierwsza to kontroler komunikacyjny z:<br>
+• CAN FD,<br>
+• USB,<br>
+• Ethernet,<br>
+• Bluetooth.<br><br>
+Umożliwia komunikację z pojazdem dla diagnostyki, sterowania i rejestracji danych.<br><br>
+Druga płytka steruje przepustnicą i komunikuje się przez CAN.<br>
+Pozwala zmieniać charakterystykę dźwięku pojazdu w zależności od:<br>
+• wybranego trybu,<br>
+• obrotów silnika.`,
+        description2: "Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną."
       },
       modal4: {
         title: "Konwerter USB na Ethernet",
-        cardText: "Konwerter umożliwiający zdalny dostęp do urządzeń USB"
+        cardText: "Konwerter umożliwiający zdalny dostęp do urządzeń USB",
+        description: `Opiera się na mikrokomputerze z systemem Linux, umożliwia podłączenie dowolnego urządzenia USB i odczyt danych zdalnie przez Ethernet.<br><br>
+Eliminuje ograniczenia długości USB i pozwala na wygodne użycie w odległych lokalizacjach.<br>
+Dodatkowo:<br>
+• zdalny reset portu USB,<br>
+• watchdog nadzorujący system.<br><br>
+Projektowany z myślą o stabilności, niezawodności i łatwej integracji w systemach przemysłowych i laboratoryjnych.`,
+        description2: "Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną."
       },
       modal5: {
         title: "Sterownik automatyki domowej",
-        cardText: "Kompaktowy sterownik oparty na Raspberry Pi i ESP"
+        cardText: "Kompaktowy sterownik oparty na Raspberry Pi i ESP",
+        description: `Sterowniki kompaktowe do montażu na szynie DIN.<br><br>
+Oparte na Raspberry Pi i ESP, umożliwiają elastyczną konfigurację i integrację ze smart home.<br>
+Wyposażone w:<br>
+• wyjścia przekaźnikowe,<br>
+• wejścia cyfrowe,<br>
+• magistralę 1-Wire dla czujników.<br><br>
+Szczególny nacisk na stabilność sekcji zasilania i ochronę przed zawieszaniem systemu i niekontrolowanymi restartami.`,
+        description2: "Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną."
       },
       modal6: {
         title: "Sterownik interaktywnego fotela",
-        cardText: "Sterownik zarządzający pełną automatyką fotela"
+        cardText: "Sterownik zarządzający pełną automatyką fotela",
+        description: `Zapewnia pełną kontrolę interaktywnego fotela.<br><br>
+Funkcje:<br>
+• sterowanie silnikami krokowymi,<br>
+• przyciski jako interfejs,<br>
+• kontroler LED fotela,<br>
+• czujniki światła i temperatury,<br>
+• przekaźniki do zewnętrznych urządzeń.<br><br>
+Jednostka logiczna: Raspberry Pi.<br>
+Wyzwanie: zmieścić wiele funkcji na małej płytce PCB przy zachowaniu stabilności i niezawodności.`,
+        description2: "Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez schemat oraz PCB, aż po uruchomienie i produkcję seryjną."
       }
     }
   }
 };
 
+// Funkcja zmiany języka
 function setLanguage(lang) {
   document.getElementById("headerTitle").textContent = texts[lang].headerTitle;
   document.getElementById("navHome").textContent = texts[lang].navHome;
@@ -588,7 +703,7 @@ function setLanguage(lang) {
     btn.style.color = btn.textContent.toLowerCase() === lang ? '#121212' : '#ff8c00';
   });
 
-  // Tłumaczenie projektów w gridzie i modalach
+  // Zmiana tekstów projektów w gridzie i modalach
   for (let i = 1; i <= 6; i++) {
     const card = document.querySelector(`.project-card:nth-child(${i})`);
     if (card) {
@@ -596,17 +711,16 @@ function setLanguage(lang) {
       card.querySelector("p").textContent = texts[lang].projects[`modal${i}`].cardText;
     }
 
-    const modalTitle = document.querySelector(`#modal${i} .modal-title`);
-    if (modalTitle) {
-      modalTitle.textContent = texts[lang].projects[`modal${i}`].title;
+    const modal = document.querySelector(`#modal${i}`);
+    if (modal) {
+      modal.querySelector(".modal-title").textContent = texts[lang].projects[`modal${i}`].title;
+      modal.querySelector(".modal-description").innerHTML = texts[lang].projects[`modal${i}`].description;
+      modal.querySelector(".modal-description2").textContent = texts[lang].projects[`modal${i}`].description2;
     }
   }
 }
 
-// Ustawienie domyślnego języka na PL
-setLanguage("pl");
-
-// MODAL JS
+// Obsługa modali
 function openModal(id) {
   const modal = document.getElementById(id);
   modal.style.display = "flex";
@@ -627,7 +741,11 @@ window.addEventListener("click", function (e) {
     }
   });
 });
+
+// Ustaw domyślny język
+setLanguage("pl");
 </script>
+
 
 
 </body>
