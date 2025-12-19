@@ -187,9 +187,10 @@
     }
 
     .modal-gallery img {
-      width: 100%;
+      width: 100%;        /* wypełnia kolumnę */
+      height: 200px;      /* stała wysokość dla wszystkich */
+      object-fit: cover;  /* przycina obrazek, zachowując proporcje */
       border-radius: 5px;
-      object-fit: cover;
     }
 
     .modal-description {
