@@ -195,7 +195,7 @@
     .modal-description {
       font-size: 1em;
       line-height: 1.6;
-      text-align: left;
+      text-align: left;;
     }
      .modal-description2 {
       font-size: 1em;
@@ -250,8 +250,9 @@
 
   .modal-content::-webkit-scrollbar-thumb:hover {
     background-color: #ffa500;
-  }
-      
+  }          
+}
+
   </style>
 </head>
 
@@ -486,21 +487,21 @@ Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez sch
     © 2025 Michał Szostek
   </div>
 
-  <script>
-    const texts = {
-      en: {
-        headerTitle: "Electronics Engineer",
-        navHome: "Home",
-        navProjects: "Projects",
-        navContact: "Contact",
-        homeHeader: "Welcome",
-        homeText: "I am an electronics engineer with experience in designing and commissioning electronic devices — from concept, through schematics and PCB design, to testing and production deployment. I specialize in projects based on microcontrollers, communication interfaces, and power supply circuits, with a strong focus on reliability and project quality.<br>On a daily basis, I work with PCB design tools, prepare production documentation, and collaborate with firmware, mechanical, and production teams. I have practical experience in prototyping, hardware debugging, and solving issues that arise during commissioning and testing.",
-        projectsHeader: "Selected Projects",
-        contactHeader: "Contact",
-        phone: "Phone: 573 055 222",
-        email: "Email: szostekmichal.praca@gmail.com"
+ <script>
+const texts = {
+  en: {
+    headerTitle: "Electronics Engineer",
+    navHome: "Home",
+    navProjects: "Projects",
+    navContact: "Contact",
+    homeHeader: "Welcome",
+    homeText: "I am an electronics engineer with experience in designing and commissioning electronic devices — from concept, through schematics and PCB design, to testing and production deployment. I specialize in projects based on microcontrollers, communication interfaces, and power supply circuits, with a strong focus on reliability and project quality.<br>On a daily basis, I work with PCB design tools, prepare production documentation, and collaborate with firmware, mechanical, and production teams. I have practical experience in prototyping, hardware debugging, and solving issues that arise during commissioning and testing.",
+    projectsHeader: "Selected Projects",
+    contactHeader: "Contact",
+    phone: "Phone: 573 055 222",
+    email: "Email: szostekmichal.praca@gmail.com",
 
-        projects: {
+    projects: {
       modal1: {
         title: "PoE Power Supply for Access Control Controller",
         cardText: "Extension board enabling Power over Ethernet and microcomputer integration"
@@ -524,22 +525,23 @@ Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez sch
       modal6: {
         title: "Interactive Chair Controller",
         cardText: "Controller managing full chair automation"
-        }
-        }
-      },
-      pl: {
-        headerTitle: "Inżynier Elektronik",
-        navHome: "Strona główna",
-        navProjects: "Projekty",
-        navContact: "Kontakt",
-        homeHeader: "Profil zawodowy",
-        homeText: "Jestem inżynierem elektroniki z doświadczeniem w projektowaniu oraz uruchamianiu urządzeń elektronicznych — od koncepcji, przez schemat i PCB, aż po testy oraz wdrożenie do produkcji. Specjalizuję się w projektach opartych o mikrokontrolery, interfejsy komunikacyjne oraz układy zasilania, ze szczególnym naciskiem na niezawodność i jakość projektu.<br> Na co dzień pracuję z narzędziami do projektowania PCB, przygotowuję dokumentację produkcyjną oraz współpracuję z zespołami firmware, mechaniki i produkcji. Mam praktyczne doświadczenie w prototypowaniu, debugowaniu sprzętu oraz rozwiązywaniu problemów pojawiających się na etapie uruchomień i testów.",
-        projectsHeader: "Wybrane projekty",
-        contactHeader: "Kontakt",
-        phone: "Telefon: 573 055 222",
-        email: "Email: szostekmichal.praca@gmail.com"
+      }
+    }
+  },
 
-        projects: {
+  pl: {
+    headerTitle: "Inżynier Elektronik",
+    navHome: "Strona główna",
+    navProjects: "Projekty",
+    navContact: "Kontakt",
+    homeHeader: "Profil zawodowy",
+    homeText: "Jestem inżynierem elektroniki z doświadczeniem w projektowaniu oraz uruchamianiu urządzeń elektronicznych — od koncepcji, przez schemat i PCB, aż po testy oraz wdrożenie do produkcji. Specjalizuję się w projektach opartych o mikrokontrolery, interfejsy komunikacyjne oraz układy zasilania, ze szczególnym naciskiem na niezawodność i jakość projektu.<br> Na co dzień pracuję z narzędziami do projektowania PCB, przygotowuję dokumentację produkcyjną oraz współpracuję z zespołami firmware, mechaniki i produkcji. Mam praktyczne doświadczenie w prototypowaniu, debugowaniu sprzętu oraz rozwiązywaniu problemów pojawiających się na etapie uruchomień i testów.",
+    projectsHeader: "Wybrane projekty",
+    contactHeader: "Kontakt",
+    phone: "Telefon: 573 055 222",
+    email: "Email: szostekmichal.praca@gmail.com",
+
+    projects: {
       modal1: {
         title: "Zasilacz PoE do kontrolera kontroli dostępu",
         cardText: "Nakładka umożliwiająca zasilanie przez Ethernet i integrację mikrokomputera"
@@ -564,11 +566,11 @@ Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez sch
         title: "Sterownik interaktywnego fotela",
         cardText: "Sterownik zarządzający pełną automatyką fotela"
       }
-      }
-      }
-    };
+    }
+  }
+};
 
-    function setLanguage(lang) {
+function setLanguage(lang) {
   document.getElementById("headerTitle").textContent = texts[lang].headerTitle;
   document.getElementById("navHome").textContent = texts[lang].navHome;
   document.getElementById("navProjects").textContent = texts[lang].navProjects;
@@ -580,51 +582,54 @@ Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez sch
   document.getElementById("contactPhone").textContent = texts[lang].phone;
   document.getElementById("contactEmail").textContent = texts[lang].email;
 
-  // PODŚWIETLENIE AKTYWNEGO JĘZYKA
+  // Podświetlenie aktywnego języka
   document.querySelectorAll('.language-switch button').forEach(btn => {
     btn.style.background = btn.textContent.toLowerCase() === lang ? '#ff8c00' : '#1f1f1f';
     btn.style.color = btn.textContent.toLowerCase() === lang ? '#121212' : '#ff8c00';
   });
 
-       // ZMIANA TEKSTÓW PROJEKTÓW
+  // Tłumaczenie projektów w gridzie i modalach
   for (let i = 1; i <= 6; i++) {
     const card = document.querySelector(`.project-card:nth-child(${i})`);
-    card.querySelector("h4").textContent = texts[lang].projects[`modal${i}`].title;
-    card.querySelector("p").textContent = texts[lang].projects[`modal${i}`].cardText;
+    if (card) {
+      card.querySelector("h4").textContent = texts[lang].projects[`modal${i}`].title;
+      card.querySelector("p").textContent = texts[lang].projects[`modal${i}`].cardText;
+    }
 
     const modalTitle = document.querySelector(`#modal${i} .modal-title`);
-    modalTitle.textContent = texts[lang].projects[`modal${i}`].title;
+    if (modalTitle) {
+      modalTitle.textContent = texts[lang].projects[`modal${i}`].title;
+    }
   }
 }
 
-    setLanguage("pl");
+// Ustawienie domyślnego języka na PL
+setLanguage("pl");
 
-    // MODAL JS
-    function openModal(id) {
-      const modal = document.getElementById(id);
-      modal.style.display = "flex";
-      const content = modal.querySelector(".modal-content");
-      content.style.animation = "grow 0.3s forwards";
-    }
+// MODAL JS
+function openModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = "flex";
+  const content = modal.querySelector(".modal-content");
+  content.style.animation = "grow 0.3s forwards";
+}
 
-    function closeModal(id) {
-      const modal = document.getElementById(id);
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = "none";
+}
+
+window.addEventListener("click", function (e) {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach(modal => {
+    if (e.target === modal) {
       modal.style.display = "none";
     }
+  });
+});
+</script>
 
-    window.addEventListener("click", function (e) {
-      const modals = document.querySelectorAll(".modal");
-      modals.forEach(modal => {
-        if (e.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-    });
-  </script>
 
 </body>
 
 </html>
-
-
-
