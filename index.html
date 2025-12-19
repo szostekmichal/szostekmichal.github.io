@@ -251,19 +251,6 @@
   .modal-content::-webkit-scrollbar-thumb:hover {
     background-color: #ffa500;
   }
-
-      /* --- MNIEJSZE EKRANY --- */
-      @media (max-width: 900px) {
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 600px) {
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
       
   </style>
 </head>
@@ -528,17 +515,24 @@ Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez sch
     };
 
     function setLanguage(lang) {
-      document.getElementById("headerTitle").textContent = texts[lang].headerTitle;
-      document.getElementById("navHome").textContent = texts[lang].navHome;
-      document.getElementById("navProjects").textContent = texts[lang].navProjects;
-      document.getElementById("navContact").textContent = texts[lang].navContact;
-      document.getElementById("homeHeader").textContent = texts[lang].homeHeader;
-      document.getElementById("homeText").innerHTML = texts[lang].homeText;
-      document.getElementById("projectsHeader").textContent = texts[lang].projectsHeader;
-      document.getElementById("contactHeader").textContent = texts[lang].contactHeader;
-      document.getElementById("contactPhone").textContent = texts[lang].phone;
-      document.getElementById("contactEmail").textContent = texts[lang].email;
-    }
+  document.getElementById("headerTitle").textContent = texts[lang].headerTitle;
+  document.getElementById("navHome").textContent = texts[lang].navHome;
+  document.getElementById("navProjects").textContent = texts[lang].navProjects;
+  document.getElementById("navContact").textContent = texts[lang].navContact;
+  document.getElementById("homeHeader").textContent = texts[lang].homeHeader;
+  document.getElementById("homeText").innerHTML = texts[lang].homeText;
+  document.getElementById("projectsHeader").textContent = texts[lang].projectsHeader;
+  document.getElementById("contactHeader").textContent = texts[lang].contactHeader;
+  document.getElementById("contactPhone").textContent = texts[lang].phone;
+  document.getElementById("contactEmail").textContent = texts[lang].email;
+
+  // PODŚWIETLENIE AKTYWNEGO JĘZYKA
+  document.querySelectorAll('.language-switch button').forEach(btn => {
+    btn.style.background = btn.textContent.toLowerCase() === lang ? '#ff8c00' : '#1f1f1f';
+    btn.style.color = btn.textContent.toLowerCase() === lang ? '#121212' : '#ff8c00';
+  });
+}
+
     setLanguage("pl");
 
     // MODAL JS
