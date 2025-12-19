@@ -1,2 +1,2 @@
 # szostekmichal.github.io
-OPIS?
+PORTFOLIO
