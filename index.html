@@ -585,6 +585,16 @@ Projekt wykonany w całości samodzielnie – od koncepcji i projektu, przez sch
     btn.style.background = btn.textContent.toLowerCase() === lang ? '#ff8c00' : '#1f1f1f';
     btn.style.color = btn.textContent.toLowerCase() === lang ? '#121212' : '#ff8c00';
   });
+
+       // ZMIANA TEKSTÓW PROJEKTÓW
+  for (let i = 1; i <= 6; i++) {
+    const card = document.querySelector(`.project-card:nth-child(${i})`);
+    card.querySelector("h4").textContent = texts[lang].projects[`modal${i}`].title;
+    card.querySelector("p").textContent = texts[lang].projects[`modal${i}`].cardText;
+
+    const modalTitle = document.querySelector(`#modal${i} .modal-title`);
+    modalTitle.textContent = texts[lang].projects[`modal${i}`].title;
+  }
 }
 
     setLanguage("pl");
